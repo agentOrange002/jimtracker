@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="issue_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e0849eb0-2ab6-419c-a477-90c5d955e001">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JimTrackerDB"/>
+	<property name="net.sf.jasperreports.export.pdf.display.metadata.title" value="IssueReportPDF"/>
+	<parameter name="issueid" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM itsystemdb.issues WHERE issue_id = $P{issueid}]]>
+	</queryString>
+	<field name="id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issues"/>
+	</field>
+	<field name="date_closed" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="date_closed"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issues"/>
+	</field>
+	<field name="date_opened" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="date_opened"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issues"/>
+	</field>
+	<field name="date_reported" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="date_reported"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issues"/>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issues"/>
+	</field>
+	<field name="email_provided" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="email_provided"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issues"/>
+	</field>
+	<field name="issue_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="issue_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issues"/>
+	</field>
+	<field name="issue_status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="issue_status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issues"/>
+	</field>
+	<field name="reported_by" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="reported_by"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issues"/>
+	</field>
+	<field name="subject" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="subject"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issues"/>
+	</field>
+	<group name="issue_id">
+		<groupExpression><![CDATA[$F{issue_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="321" height="20" uuid="a1de06ff-d84b-40df-a623-8d3caa530d97"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Issue Report Information]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="321" height="20" uuid="e02f5c76-48c1-43fa-83da-246e9a2cbf4d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Information Technology System Support]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="360" y="7" width="121" height="31" uuid="8bbd73a9-ba46-4857-8738-b21cc4a112d6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="7" width="60" height="30" uuid="8b11d4f6-a493-436b-ac48-86109b84f7ec"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Table ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="7" width="60" height="30" uuid="70342bfd-ffb1-4860-afb3-6b1cab3a2a48"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Issue ID:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="69" y="7" width="121" height="31" uuid="d6681b91-bd1b-4ba4-a538-eb09119c8764"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{issue_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="182" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="10" width="60" height="30" uuid="657da44a-482e-49da-8ece-6de679f8a745"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Reported By:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="10" width="121" height="31" uuid="b6f255b0-2452-4717-9fdc-5c4cd0e57f81"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{reported_by}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="10" width="81" height="30" uuid="954a3377-9b72-4b78-9f63-1a0a91072697"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Date Reported:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="10" width="121" height="31" uuid="c78d87bb-dc7d-4167-b7aa-71304785b235"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{date_reported}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="50" width="60" height="30" uuid="84525883-6a2c-4eab-a1a7-1d962ca66891"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Subject:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="50" width="121" height="31" uuid="8d873bad-7929-485a-9f27-0cc2b674ed5d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{subject}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="95" width="60" height="30" uuid="1f28cb05-206d-41d5-8f14-d4db568ad98e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Description:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="75" y="95" width="470" height="65" uuid="6eed6f31-36b6-4906-901d-852088453cc8"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{reported_by}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="361" y="9" width="60" height="30" uuid="08263473-05a6-490d-8e95-3a87e0f0c248"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Issue Status:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="9" width="121" height="31" uuid="fb80bb51-0f07-4161-9382-d21318a3ac09"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{issue_status}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="7" width="60" height="30" uuid="a0846e38-7ed2-4675-990b-d6d9baf7025e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Email Provided:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="75" y="7" width="121" height="31" uuid="c6dc6c89-9a47-4599-8ca8-271c34b8d124"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{email_provided}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

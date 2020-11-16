@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TicketInfo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="590f35a1-80c5-4cf4-aaa0-5a5deea93265">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dateOpened" class="java.util.Date">
+		<fieldDescription><![CDATA[dateOpened]]></fieldDescription>
+	</field>
+	<field name="subject" class="java.lang.String">
+		<fieldDescription><![CDATA[subject]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[description]]></fieldDescription>
+	</field>
+	<field name="usertaskDetails" class="com.app.sys.jimtracker.entity.UserEntity">
+		<fieldDescription><![CDATA[usertaskDetails]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="dateClosed" class="java.util.Date">
+		<fieldDescription><![CDATA[dateClosed]]></fieldDescription>
+	</field>
+	<field name="taskId" class="java.lang.String">
+		<fieldDescription><![CDATA[taskId]]></fieldDescription>
+	</field>
+	<field name="ticketDetails" class="com.app.sys.jimtracker.entity.TicketEntity">
+		<fieldDescription><![CDATA[ticketDetails]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="10" width="100" height="30" uuid="6db40653-75a7-42c3-afc7-4c67dad9f0dd"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="10" width="100" height="30" uuid="af3d96b8-89c4-4d9a-8394-92b4115ae45e"/>
+				<textFieldExpression><![CDATA[$F{subject}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="10" width="100" height="30" uuid="efdbd56d-4f1f-4702-b323-331c632bcc90"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="10" width="100" height="30" uuid="97796ed5-13f0-40eb-96a0-05f4c41d0b97"/>
+				<textFieldExpression><![CDATA[$F{dateOpened}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="26" y="71" width="100" height="30" uuid="74522076-600a-4a49-bdcf-a6b28b8e90bc"/>
+				<textFieldExpression><![CDATA[$F{dateClosed}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="71" width="100" height="30" uuid="0f930889-9751-496c-9ab9-9067ed9582a4"/>
+				<textFieldExpression><![CDATA[$F{taskId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
